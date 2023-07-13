@@ -41,6 +41,7 @@ The API documentation for the available endpoints can be found in the [API Docum
 
 The folder structure of the application is as follows:
 
+```
 ├── config
 │   ├── database.js
 │   ├── jwt-config.js
@@ -77,7 +78,7 @@ The folder structure of the application is as follows:
 ├── .env
 ├── README.md
 └── ...
-
+```
 
 - `config`: Contains configuration files (e.g., database,JWT-Config).
 - `controllers`: Handles the business logic for each route and client side errors.
@@ -94,6 +95,4 @@ The folder structure of the application is as follows:
 This project is licensed under the [MIT License](LICENSE).
 
 Feel free to modify and adapt this README file to fit your specific application's details and requirements.
-
-Remember to update the technologies used, folder structure, and other information to match your project's setup.
 
