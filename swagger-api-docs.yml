@@ -1,0 +1,220 @@
+swagger: "2.0"
+info:
+  description: "API documentation for coding platform project"
+  version: "1.0.0"
+  title: "COMETLABS PROJECT API"
+  license:
+    name: "MIT"
+    url: "https://mit-license.org/"
+host: "api.example.com"
+basePath: "/v1"
+tags:
+  - name: "auth"
+    description: "Auth related endpoints"
+  - name: "questions"
+    description: "Question related endpoints"
+  - name: "testcases"
+    description: "Test case related endpoints"
+schemes:
+  - "https"
+paths:
+  /signup:
+    post:
+      tags:
+        - "auth"
+      summary: "Create a new user."
+      operationId: "createUser"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "body"
+          in: "body"
+          description: "User data for signup."
+          required: true
+          schema:
+            # Define your user signup schema here
+      responses:
+        "200":
+          description: "User created successfully."
+          schema:
+            # Define your response schema here
+  /login:
+    post:
+      tags:
+        - "auth"
+      summary: "User login."
+      operationId: "login"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "body"
+          in: "body"
+          description: "User login credentials."
+          required: true
+          schema:
+            # Define your user login schema here
+      responses:
+        "200":
+          description: "User logged in successfully."
+          schema:
+            # Define your response schema here
+  /questions:
+    post:
+      tags:
+        - "questions"
+      summary: "Create a new question."
+      operationId: "createQuestion"
+      security:
+        - Auth: []
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "body"
+          in: "body"
+          description: "Question data."
+          required: true
+          schema:
+            # Define your question schema here
+      responses:
+        "200":
+          description: "Question created successfully."
+          schema:
+            # Define your response schema here
+        "401":
+          description: "Unauthorized access."
+    delete:
+      tags:
+        - "questions"
+      summary: "Delete a question."
+      operationId: "deleteQuestion"
+      security:
+        - Auth: []
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "query"
+          description: "Question ID to delete."
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Question deleted successfully."
+          schema:
+            # Define your response schema here
+        "401":
+          description: "Unauthorized access."
+    put:
+      tags:
+        - "questions"
+      summary: "Update a question."
+      operationId: "updateQuestion"
+      security:
+        - Auth: []
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "query"
+          description: "Question ID to update."
+          required: true
+          type: "string"
+        - name: "body"
+          in: "body"
+          description: "Updated question data."
+          required: true
+          schema:
+            # Define your updated question schema here
+      responses:
+        "200":
+          description: "Question updated successfully."
+          schema:
+            # Define your response schema here
+        "401":
+          description: "Unauthorized access."
+  /testcases:
+    post:
+      tags:
+        - "testcases"
+      summary: "Create a new testcase."
+      operationId: "createTestcase"
+      security:
+        - Auth: []
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "body"
+          in: "body"
+          description: "Testcase data."
+          required: true
+          schema:
+            # Define your testcase schema here
+      responses:
+        "200":
+          description: "Testcase created successfully."
+          schema:
+            # Define your response schema here
+        "401":
+          description: "Unauthorized access."
+    delete:
+      tags:
+        - "testcases"
+      summary: "Delete a testcase."
+      operationId: "deleteTestcase"
+      security:
+        - Auth: []
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "query"
+          description: "Testcase ID to delete."
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Testcase deleted successfully."
+          schema:
+            # Define your response schema here
+        "401":
+          description: "Unauthorized access."
+    put:
+      tags:
+        - "testcases"
+      summary: "Update a testcase."
+      operationId: "updateTestcase"
+      security:
+        - Auth: []
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "query"
+          description: "Testcase ID to update."
+          required: true
+          type: "string"
+        - name: "body"
+          in: "body"
+          description: "Updated testcase data."
+          required: true
+          schema:
+            # Define your updated testcase schema here
+      responses:
+        "200":
+          description: "Testcase updated successfully."
+          schema:
+            # Define your response schema here
+        "401":
+          description: "Unauthorized access."
