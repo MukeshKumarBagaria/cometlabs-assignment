@@ -1,5 +1,6 @@
 import mongoose  from "mongoose";
-import 'dotenv/config'
+import 'dotenv/config';
+
 export const connect= async () => {
-await mongoose.connect(process.env.MONGODB_URL)
+await mongoose.connect('mongodb://localhost/cometlabs')
 }
