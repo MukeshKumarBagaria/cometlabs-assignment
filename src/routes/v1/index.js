@@ -20,8 +20,8 @@ router.put('/questions', authenticate, checkRole(["admin"]), updateQuestion);
 
 //TestCase Routes(ADMIN PROTECTED)
 router.post('/testcases', authenticate, checkRole(["admin"]), createTestcase);
-router.delete('/testcases/', authenticate, checkRole(["admin"]), deleteTestcase);
-router.put('/testcases/', authenticate, checkRole(["admin"]), updateTestcase);
+router.delete('/testcases', authenticate, checkRole(["admin"]), deleteTestcase);
+router.put('/testcases', authenticate, checkRole(["admin"]), updateTestcase);
 
 
 //Solution Submission Routes
